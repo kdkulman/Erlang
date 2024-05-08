@@ -1,0 +1,31 @@
+Study topics for Erlang 380 test
+
+Atom: An atom is a literal, a constant with name. 
+List: collection of data items
+airity: Number of arguments of a function
+Side effect functions: change the state of the program.
+Higher order function: takes a function as an argument, or returns a function 
+First class function: Functions are treated like any other variable.
+
+
+
+List recursion implementation:
+modList([]) -> [];
+modList([H | T]) -> 
+    NewH = H rem 2,
+    [NewH | modList(T)]. 
+
+Tail recursion implementation:
+tail(0) -> 0;
+tail(N) -> tailHelper(N, 1).
+tailHelper(0, Answer) -> Answer;
+tailHelper(N, Answer) -> tailHelper(N-1, Answer*N).
+
+Anonymous function syntax:
+DoubleNum = fun (X) -> X+X end.
+
+Higher order fuction Syntax
+Ho = fun(Func, X) -> Func(X) end.
+Ho(DoubleNum, 25). 
+%This takes in two args, a function and its arg.
+
